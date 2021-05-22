@@ -1,0 +1,10 @@
+[Unit]
+Description=Anagrammid
+
+[Service]
+ExecStart=/usr/bin/starman --listen :11012 --workers 2 --disable-keepalive --max-requests=1000 --error-log=/var/log/_anagramm.log /opt/anagramm/anagramm.psgi
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
